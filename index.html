@@ -11,10 +11,110 @@
 
 <body>
 
+    <div id="app" class="text-center">
+        <h1 class="text-center m-2">Add items to your cart</h1>
+        <div class="row mt-5">
+            <div class="col ml-5">
+                <div class="card">
+                    <img class="card-img-top" src="phone.jpeg">
+                    <div class="card-body">
+                        <h5 class="card-title" v-model="item">Phone 1</h5>
+                        <input type="button" value="Add to cart" v-on:click="addItem(1)" class="btn btn-sm btn-info">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="phone.jpeg">
+                    <div class="card-body">
+                        <h5 class="card-title" v-model="item">Phone 2</h5>
+                        <input type="button" value="Add to cart" v-on:click="addItem(2)" class="btn btn-sm btn-info">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="phone.jpeg">
+                    <div class="card-body">
+                        <h5 class="card-title" v-model="item">Phone 3</h5>
+                        <input type="button" value="Add to cart" v-on:click="addItem(3)" class="btn btn-sm btn-info">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="phone.jpeg">
+                    <div class="card-body">
+                        <h5 class="card-title" v-model="item">Phone 4</h5>
+                        <input type="button" value="Add to cart" v-on:click="addItem(4)" class="btn btn-sm btn-info">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col ml-5">
+                <div class="card">
+                    <img class="card-img-top" src="phone.jpeg">
+                    <div class="card-body">
+                        <h5 class="card-title" v-model="item">Phone 5</h5>
+                        <input type="button" value="Add to cart" v-on:click="addItem(5)" class="btn btn-sm btn-info">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="phone.jpeg">
+                    <div class="card-body">
+                        <h5 class="card-title" v-model="item">Phone 6</h5>
+                        <input type="button" value="Add to cart" v-on:click="addItem(6)" class="btn btn-sm btn-info">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="phone.jpeg">
+                    <div class="card-body">
+                        <h5 class="card-title" v-model="item">Phone 7</h5>
+                        <input type="button" value="Add to cart" v-on:click="addItem(7)" class="btn btn-sm btn-info">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="phone.jpeg">
+                    <div class="card-body">
+                        <h5 class="card-title" v-model="item">Phone 8</h5>
+                        <input type="button" value="Add to cart" v-on:click="addItem(8)" class="btn btn-sm btn-info">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1 class="">Cart</h1>
+            <ul id="cart" class="list-group" style="margin: 0 30% 0 30%;">
     
-
+            </ul>
+        </div>
+    
+    </div>
+    
+    
     <script>
-
+        let app = new Vue({
+            el: '#app',
+            data: {
+                item: ''
+            },
+            methods: {
+                addItem: (id) => {
+                    let items = document.getElementsByClassName('item')
+                    let newItem = document.createElement('li')
+                    newItem.classList.add("list-group-item")
+                    newItem.innerText = "Phone " + id
+                    document.getElementById('cart').appendChild(newItem)
+                }
+            }
+        })
     </script>
 </body>
 
